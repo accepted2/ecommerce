@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container" style="display: flex; justify-content: space-between;">
+    <div class="row">
+        <div class="col-md-12">
+            <ol id="list-group"
+                style="margin-top: 20px;"></ol>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-12">
+            <form id="checkout-form" method="POST">
+                {% csrf_token %}
+                <input type="hidden" id="items" name="items">
+                <input type="hidden" id="totalQuantity" name="totalQuantity" value="{{totalQuantity}}">
+                <div class="mb-3">
+                    <label for="inputtext" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" name="address"
+                        placeholder="Enter your address">
+                </div>
+                <button type="submit" class="btn btn-primary">Place order</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

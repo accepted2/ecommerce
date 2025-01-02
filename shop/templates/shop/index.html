@@ -1,0 +1,57 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container">
+    <div class="product-container">
+        {% for product in products %}
+        <div class="product-card">
+            <a href="{% url 'details' product.pk %}">
+                <img src="{{ product.image }}" class="card-img-top"></a>
+            <div class="card-body">
+                <div class="desctiprition" style="margin-bottom: 1rem;">
+                    <div class="card-title">
+                        <a id="nm{{ product.id }}" href="{% url 'details' product.pk %}" class="page-link">
+                            {{ product.title|capfirst }}
+                        </a>
+                    </div>
+                    <div class="card-text">
+                        ${{ product.price }}
+                    </div>
+                    <button class="btn btn-outline-info mt-2">
+                        <a href="{% url 'details' product.pk %}" class="page-link">View</a>
+                    </button>
+                    <!-- Добавлены необходимые data-атрибуты -->
+                    <button
+                        data-product-id="{{ product.id }}"
+                        data-product-name="{{ product.title|capfirst }}"
+                        data-product-price="{{ product.price }}"
+                        data-product-image="{{ product.image }}"
+                        data-product-description='{{product.description}}'
+                        class="btn atc btn-outline-success mt-2">
+                        Add to cart
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% if paginator.num_pages > 1 %}
+    <ul class="pagination mt-4">
+        {% if products.has_previous %}
+        <li><a href="?page={{ products.previous_page_number }}" class="page-link">Prev</a></li>
+        {% endif %}
+        {% for page in paginator.page_range %}
+        <li class="{% if page == products.number %}active{% endif %}">
+            <a href="?page={{ page }}" class="page-link">{{ page }}</a>
+        </li>
+        {% endfor %}
+        {% if products.has_next %}
+        <li><a href="?page={{ products.next_page_number }}" class="page-link">Next</a></li>
+        {% endif %}
+    </ul>
+    {% else %}
+    <div style="text-align:center">
+        <p3 style="color: rgb(114, 114, 174);">No such items</p3>
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'main.html' %} {% block content %}
+<div class="container-detail">
+    <div class="block">
+        <img src="{{ product.image }}" class="img-fluid" alt="{{ product.title }}" style="width: 450px;">
+    </div>
+    <!-- Колонка с деталями продукта -->
+    <div class="block">
+        <h2>{{ product.title|capfirst }}</h2>
+        <h2>{{ product.discount }}</h2>
+        <h2>{{ product.category }}</h2>
+        <p class="description">{{ product.description  }}</p>
+        <p><strong>Price:</strong> {{ product.price }} $</p>
+    </div>
+</div>
+{% endblock content %}

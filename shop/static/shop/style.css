@@ -1,0 +1,159 @@
+.product-container {
+    display: flex;
+    justify-content: flex-start;
+
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+    margin-top: 1rem;
+
+
+}
+
+.product-card {
+    flex: 0 1 calc(16.66% + 8px);
+    /* 6 карточек на строку (100% / 6) с учетом промежутка */
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Пример тени для карточек */
+    border-radius: 8px;
+    /* Сглаженные углы */
+    overflow: hidden;
+    /* Скрыть часть карточки, выходящую за границы */
+}
+
+.product-card img {
+    height: 200px;
+    /* Устанавливаем фиксированную высоту для всех изображений */
+    object-fit: cover;
+    /* Обеспечиваем корректное отображение содержимого внутри фиксированной высоты */
+    width: 100%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 4rem;
+}
+
+.card-title {
+    font-weight: 600px;
+    color: rgb(28, 23, 23);
+    margin-bottom: 15px;
+    /* Можно добавить немного отступа между названием и ценой */
+}
+
+.card-text {
+    margin-top: auto;
+    /* Это "выталкивает" цену вниз */
+    font-weight: bold;
+    color: rgb(1, 86, 58);
+}
+
+.search-bar {
+    display: flex;
+    padding: 15px;
+
+}
+
+.search-bar input {
+    width: 90%;
+}
+
+.search-bar button {
+    width: 10%;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.container-detail {
+    display: flex;
+}
+
+.block {
+    flex: 1;
+    margin: 2px
+}
+
+.description {
+    width: 76ch;
+    /* Ограничиваем ширину строки до 50 символов */
+    white-space: normal;
+    /* Обычное поведение переноса строк */
+    word-wrap: break-word;
+    /* Переносим длинные слова, если они не умещаются в строку */
+}
+
+.cart-icon {
+    font-size: 1.5rem;
+    position: absolute;
+    /* Чтобы маленькое число можно было позиционировать относительно корзинки */
+}
+
+.cart-count {
+    position: relative;
+    top: -17px;
+    /* Позиционируем сверху и справа относительно иконки */
+    left: 16px;
+    background-color: rgb(172, 193, 177);
+    /* Цвет фона для цифры */
+    color: rgb(0, 0, 0);
+    /* Цвет текста */
+    border-radius: 50%;
+    /* Делаем круг */
+    padding: 2px 5px;
+    /* Внутренний отступ */
+    font-size: 15px;
+    /* Размер шрифта цифры */
+}
+
+.popover-body img {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: contain;
+}
+
+.popover-body h6 {
+    margin-top: -18px;
+}
+
+.popover-body .cart-items {
+    margin-top: 20px;
+}
+
+#checkout {
+    background-color: #f0ad4e;
+    color: white;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    border: none;
+}
+
+.popover-header {
+    background-color: #f0ad4e;
+    color: rgb(65, 106, 140);
+}
+
+span.badge {
+    margin-top: 2px;
+    font-size: 13px;
+}
+
+#total {
+    margin-right: 2px;
+}
+
+p#qualities {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+p#description {
+    margin-top: -15px;
+    margin-bottom: 0px;
+}

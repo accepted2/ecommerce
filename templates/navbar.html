@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" style="margin-left:23%; font-size: 1.5rem;" href="{% url 'index' %}">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left:0%">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" style="margin-left:10%; font-size: 1.3rem;">
+                <a class="nav-link" href="#">
+                    <button data-bs-html="true" type="button" class="btn btn-secondary"
+                        data-bs-toggle="popover" data-bs-placement="right"
+                        data-bs-custom-class="custom-popover"
+                        data-bs-title="This is your cart"
+                        id="popup-id"
+                        data-checkout-url="{% url 'checkout' %}"
+                        data-bs-content="">
+                        <!-- Иконка корзины -->
+                        <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                        <!-- Счетчик товаров в корзине -->
+                        <small id="cart-status" class="cart-count" style="color: rgb(0, 0, 0); margin-left: 5px;">
+                            (0)
+                        </small>
+                    </button>
+                </a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 " style="margin-left:25%">
+            <div class=" search-bar">
+                <input name="item_name" class="form-control me-2" type="search"
+                    style="width: 400px;"
+                    placeholder=" Search"
+                    aria-label="Search">
+                <button class="btn btn-outline-success " style="width: 100px; margin-right: 1rem;"
+                    type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+</nav>
